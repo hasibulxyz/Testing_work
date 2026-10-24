@@ -1,13 +1,338 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
-  <title>MCQ Master</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="Hasibul Islam — Student, aspiring programmer and web development learner.">
+  <title>Hasibul Islam | Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --card: #121620;
+      --text: #f3f5f7;
+      --muted: #9ba4b5;
+      --accent: #65e5c1;
+      --border: #252b37;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1060px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 13, 18, .92);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo { font-size: 20px; font-weight: 800; }
+    .logo span, .accent { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      padding: 85px 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.12;
+      margin: 18px 0;
+      letter-spacing: -2px;
+    }
+
+    .hero p, .section-intro {
+      color: var(--muted);
+      max-width: 620px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 19px;
+      border-radius: 9px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #08110f;
+      border-color: var(--accent);
+    }
+
+    section { padding: 65px 0; scroll-margin-top: 75px; }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-intro { margin-bottom: 28px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: var(--muted); font-size: 15px; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      border-radius: 8px;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--accent);
+      border: 1px solid #285b50;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card { text-align: center; }
+    .contact-card p { margin: 12px auto 20px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+      .nav-links { gap: 15px; }
+      .hero { min-height: auto; padding: 80px 0 60px; }
+      .grid { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1px; }
+      section { padding: 48px 0; }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>MCQ Master</h1>
-  <p>Welcome to MCQ Master!</p>
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Hasibul<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <div class="eyebrow">Student · Aspiring Programmer</div>
+        <h1>Hi, I'm Hasibul<br>Islam<span class="accent">.</span></h1>
+        <p>
+          I'm learning programming and web development, exploring new
+          technologies, and building projects step by step.
+          My goal is to grow into a skilled programmer and create
+          useful digital experiences.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore My Projects ↗</a>
+          <a class="btn" href="https://github.com/hasibulxyz"
+             target="_blank" rel="noopener noreferrer">My GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me<span class="accent">.</span></h2>
+        <p class="section-intro">
+          A little about who I am and what I'm working towards.
+        </p>
+        <div class="card">
+          <h3>Learning today, building tomorrow.</h3>
+          <p>
+            I'm Hasibul Islam, a student from Bangladesh who is
+            passionate about technology and programming. After completing
+            my HSC, I'm preparing for university admission while
+            developing my technical skills. I believe in learning
+            concepts properly, practising consistently, and improving
+            through real projects.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">My Learning Journey<span class="accent">.</span></h2>
+        <p class="section-intro">
+          Technologies I'm currently learning and practising.
+        </p>
+        <div class="skills">
+          <span class="tag">Python</span>
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">SQL</span>
+          <span class="tag">GitHub</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects<span class="accent">.</span></h2>
+        <p class="section-intro">
+          Projects I'm developing as I continue learning.
+        </p>
+        <div class="grid">
+          <article class="card">
+            <span class="status">In Progress</span>
+            <h3>MCQ Master</h3>
+            <p>
+              An educational MCQ exam platform concept featuring
+              subject-based tests, timed exams, student results,
+              and an admin panel. Currently in the planning and
+              development stage.
+            </p>
+            <div class="actions">
+              <a class="btn" href="https://github.com/hasibulxyz"
+                 target="_blank" rel="noopener noreferrer">
+                GitHub Profile ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="status">Personal Website</span>
+            <h3>Portfolio Website</h3>
+            <p>
+              This responsive portfolio introduces me, my learning
+              journey, and my projects. Built with HTML, CSS and
+              JavaScript without a backend.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education<span class="accent">.</span></h2>
+        <div class="card">
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <p>
+            HSC completed · Bangladesh<br>
+            Currently preparing for university admission.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card contact-card">
+          <h2 class="section-title">Let's Connect<span class="accent">.</span></h2>
+          <p>
+            Interested in programming, learning, and building useful
+            projects? Visit my GitHub profile to follow my journey.
+          </p>
+          <a class="btn primary"
+             href="https://github.com/hasibulxyz"
+             target="_blank" rel="noopener noreferrer">
+            Visit My GitHub ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Hasibul Islam · Built with HTML, CSS & JavaScript
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
